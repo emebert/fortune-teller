@@ -7,8 +7,9 @@ public class FortuneTellerApp {
 	public static void main(String[] args) {
 		{
 			Scanner input = new Scanner(System.in);
-			
-			//The purpose of this application is to tell the user's fortune based on 
+
+			// The purpose of this application is to tell the user's fortune
+			// based on input received from the user.
 
 			// Ask the user for the user's first name
 			System.out.println("What is your first name?");
@@ -17,6 +18,7 @@ public class FortuneTellerApp {
 			// Ask the user for the user's last name
 			System.out.println("What is your last name?");
 			String lastName = input.nextLine();
+			
 			// Ask the user for the user's age
 			System.out.println("What is your age?");
 			int age = input.nextInt();
@@ -26,9 +28,9 @@ public class FortuneTellerApp {
 
 			int birthMonth = input.nextInt();
 
-			// Ask the user to name a favorite ROYGBIV color. If the user does
-			// not know what these colors are, enter 'help' to get a list of the
-			// colors.
+			// Ask the user to name a favorite ROYGBIV color.
+			// If user does not know what these colors are, enter 'help' to get
+			// a list of the colors
 			System.out.println("What is your favorite color in ROYGBIV? Type HELP for help!");
 			String colorOne = input.next();
 
@@ -46,6 +48,9 @@ public class FortuneTellerApp {
 			System.out.println("How many siblings do you have?");
 			int mySiblings = input.nextInt();
 
+			// These conditionals create the data for the user's fortune.
+
+			// Even or odd user age determines years to retirement
 			String numberYears = "1000 years";
 			if (age % 2 == 0) {
 				numberYears = "1 year";
@@ -53,6 +58,7 @@ public class FortuneTellerApp {
 				numberYears = "50 years";
 			}
 
+			// Number of user's siblings determines vacation home location
 			String vacationHome = "in a shotgun shack";
 			if (mySiblings == 0) {
 				vacationHome = "in a shotgun shack";
@@ -66,8 +72,8 @@ public class FortuneTellerApp {
 				vacationHome = "in Peoria, Illinois";
 			}
 
+			// Birth month determines amount user will have in bank
 			String amountMoney = "$10";
-
 			if (birthMonth > 1 && birthMonth <= 4) {
 				amountMoney = "$10.00";
 			} else if (birthMonth >= 5 && birthMonth <= 8) {
@@ -78,8 +84,8 @@ public class FortuneTellerApp {
 				amountMoney = "absolutely nothing";
 			}
 
+			// Favorite ROYGBIV color determines mode of transport
 			String modeTransport = "red";
-
 			if (colorOne.equalsIgnoreCase("red")) {
 				modeTransport = "an invisible jet";
 			} else if (colorOne.equalsIgnoreCase("orange")) {
@@ -95,6 +101,8 @@ public class FortuneTellerApp {
 			} else if (colorOne.equalsIgnoreCase("violet")) {
 				modeTransport = "a pair of rollerblades";
 			}
+
+			// The fortune!
 			{
 				System.out.println(firstName + " " + lastName + " will retire in " + numberYears + " with "
 						+ amountMoney + " in the bank, a vacation home " + vacationHome + " , and travel by "
